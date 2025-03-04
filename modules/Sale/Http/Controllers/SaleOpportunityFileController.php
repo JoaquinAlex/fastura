@@ -103,7 +103,16 @@ class SaleOpportunityFileController extends Controller
     }
 
     public function download($filename) {
-        return Storage::disk('tenant')->download('sale_opportunity_files'.DIRECTORY_SEPARATOR.$filename);
+        $file_path = 'sale_opportunity_files' . DIRECTORY_SEPARATOR . $filename;
+    
+        // Verifica si el archivo existe
+        if (Storage::disk('tenant')->exists($file_path)) {
+            // Si el archivo existe, permite la descarga
+            return Storage::disk('tenant')->download($file_path);
+        } else {
+            // Si el archivo no existe, redirige con un mensaje de error
+            return redirect()->back()->with('error', 'El archivo ya no está disponible.');
+        }
     }
 
     /**
