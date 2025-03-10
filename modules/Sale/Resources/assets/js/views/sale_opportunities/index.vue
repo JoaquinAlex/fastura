@@ -193,13 +193,10 @@
         },
         methods: {
             clickDownloadFile(filename) {
-                window.open(
-                    `/${this.resource}/download-file/${filename}`,
-                    "_blank"
-                );
+                window.location.href = `/${this.resource}/download-file/${filename}`;
             },
             clickDownload(external_id) {
-                window.open(`/${this.resource}/download/${external_id}`, '_blank');
+                window.location.href = `/${this.resource}/download/${external_id}`;
             },
             clickEdit(id)
             {
