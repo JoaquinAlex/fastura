@@ -1,7 +1,22 @@
 # **Cambios realizados **
-## Agregando autentificacion
+## Solucion a la problematica para la nota 1
+## Agregando autentificacion ruta modules/Restaurant/Routes/web.php
 En el codigo original, las rutas bajo el prefijo restaurant no tenían ningún middleware aplicado directamente entonces se agregó el middleware auth a todas las rutas bajo el prefijo restaurant. Ahora todas las rutas relacionadas con el restaurante requieren que el usuario esté autenticado para poder acceder a ellas.
 
+## codigo original 
+
+Route::prefix('restaurant')->group(function() {
+    // Rutas sin protección de autenticación
+});
+
+
+## codigo modificado
+
+Route::middleware(['auth'])->group(function(){
+    Route::prefix('restaurant')->group(function() {
+        // Rutas protegidas por autenticación
+    });
+}); 
 
 
 
