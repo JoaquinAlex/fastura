@@ -5,18 +5,14 @@ En el codigo original, las rutas bajo el prefijo restaurant no tenían ningún m
 
 ## codigo original 
 
-Route::prefix('restaurant')->group(function() {
-    // Rutas sin protección de autenticación
-});
-
+<img src="zimagenesparaloscasos\modificado_rutas_caso1.png" width="120">
 
 ## codigo modificado
 
-Route::middleware(['auth'])->group(function(){
-    Route::prefix('restaurant')->group(function() {
-        // Rutas protegidas por autenticación
-    });
-}); 
+<img src="zimagenesparaloscasos\modificado_rutas_caso1.png" width="120">
+
+
+
 
 
 
