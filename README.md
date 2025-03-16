@@ -5,11 +5,11 @@ En el codigo original, las rutas bajo el prefijo restaurant no tenían ningún m
 
 ## codigo original 
 
-<img src="zimagenesparaloscasos\modificado_rutas_caso1.png" width="120">
+<img src="zimagenesparaloscasos\original_rutas_caso1.png" width="200">
 
 ## codigo modificado
 
-<img src="zimagenesparaloscasos\modificado_rutas_caso1.png" width="120">
+<img src="zimagenesparaloscasos\modificado_rutas_caso1.png" width="200">
 
 
 
