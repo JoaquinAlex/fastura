@@ -7,9 +7,10 @@
 
     if ($current_hostname) {
         Route::domain($current_hostname->fqdn)
-            ->middleware(['auth', 'locked.tenant', 'redirect.level'])
+            ->middleware(['redirect.level'])
             ->group(function () {
-            Route::prefix('suscription')
+            Route::middleware(['auth', 'locked.tenant'])
+                ->prefix('suscription')
                 ->group(function () {
                     /**
                      * suscription/client
