@@ -1,3 +1,10 @@
+# **Cambios realizados **
+## Agregando autentificacion
+En el codigo original, las rutas bajo el prefijo restaurant no tenían ningún middleware aplicado directamente entonces se agregó el middleware auth a todas las rutas bajo el prefijo restaurant. Ahora todas las rutas relacionadas con el restaurante requieren que el usuario esté autenticado para poder acceder a ellas.
+
+
+
+
 <img src="icon_pro5.png" width="120">
 
 # **Facturador PRO 5**
