@@ -23,7 +23,7 @@ Se modifico el metodo "public function download($filename)" con ruta modules/Sal
 
 ### codigo modificado
 
-<img src="zimagenesparaloscaso\modificado_metododownload_file_caso2.png" width="200">
+<img src="zimagenesparaloscasos\modificado_metododownload_file_caso2.png" width="200">
 
 ## Modificando el segundo metodo download 
 Se modifico el metodo "public function download($external_id, $format = 'a4')" con ruta modules/Sale/Http/Controllers/SaleOpportunityController.php para que valide que el archivo existe antes de descargarlo implementando un try-catch para manejar excepciones y se redirije a la pagina anterior con un mensaje claro sobre el error.
@@ -33,7 +33,7 @@ Se modifico el metodo "public function download($external_id, $format = 'a4')" c
 
 ### codigo modificado
 
-<img src="zimagenesparaloscaso\modificado_metododownload_caso2.png" width="200">
+<img src="zimagenesparaloscasos\modificado_metododownload_caso2.png" width="200">
 
 ## Agregando una vista para los errores
 En el código original, no había ningún manejo de mensajes de error en la vista. Esto significaba que los usuarios no recibían feedback visual cuando ocurría un error.
@@ -43,7 +43,7 @@ Se agregó un bloque @if para verificar si existe un mensaje de error en la sesi
 
 ### codigo modificado
 
-<img src="zimagenesparaloscaso\modificado_vista_error_caso2.png" width="200">
+<img src="zimagenesparaloscasos\modificado_vista_error_caso2.png" width="200">
 
 
 
