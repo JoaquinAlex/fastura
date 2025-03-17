@@ -3,13 +3,48 @@
 ## Agregando autentificacion ruta modules/Restaurant/Routes/web.php
 En el codigo original, las rutas bajo el prefijo restaurant no tenían ningún middleware aplicado directamente entonces se agregó el middleware auth a todas las rutas bajo el prefijo restaurant. Ahora todas las rutas relacionadas con el restaurante requieren que el usuario esté autenticado para poder acceder a ellas.
 
-## codigo original 
+### codigo original 
 
 <img src="zimagenesparaloscasos\original_rutas_caso1.png" width="200">
 
-## codigo modificado
+### codigo modificado
 
 <img src="zimagenesparaloscasos\modificado_rutas_caso1.png" width="200">
+
+## Solucion a la problematica para la nota 2
+Resolver el error al descargar archivos (que fueron eliminados) en el modulo: Oportunidad de venta
+
+## Modificando el primer metodo download 
+Se modifico el metodo "public function download($filename)" con ruta modules/Sale/Http/Controllers/SaleOpportunityFileController.php para que valide que el archivo existe antes de descargarlo implementando un try-catch para manejar excepciones y se redirije a la pagina anterior con un mensaje claro sobre el error.
+
+### codigo original 
+
+<img src="zimagenesparaloscasos\original_metododownload_file_caso2.png" width="200">
+
+### codigo modificado
+
+<img src="zimagenesparaloscaso\modificado_metododownload_file_caso2.png" width="200">
+
+## Modificando el segundo metodo download 
+Se modifico el metodo "public function download($external_id, $format = 'a4')" con ruta modules/Sale/Http/Controllers/SaleOpportunityController.php para que valide que el archivo existe antes de descargarlo implementando un try-catch para manejar excepciones y se redirije a la pagina anterior con un mensaje claro sobre el error.
+### codigo original 
+
+<img src="zimagenesparaloscasos\original_metododownload_caso2.png" width="200">
+
+### codigo modificado
+
+<img src="zimagenesparaloscaso\modificado_metododownload_caso2.png" width="200">
+
+## Agregando una vista para los errores
+En el código original, no había ningún manejo de mensajes de error en la vista. Esto significaba que los usuarios no recibían feedback visual cuando ocurría un error.
+Se agregó un bloque @if para verificar si existe un mensaje de error en la sesión (session('error')). Si existe, se muestra un mensaje de error en un div con la clase alert alert-danger.
+
+<img src="zimagenesparaloscasos\original_vista_error_caso2.png" width="200">
+
+### codigo modificado
+
+<img src="zimagenesparaloscaso\modificado_vista_error_caso2.png" width="200">
+
 
 
 
