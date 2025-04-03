@@ -17,7 +17,13 @@ use Modules\Dashboard\Traits\TotalsTrait;
 
 class DashboardData
 {
-
+    protected static $colors = [
+        'white' => ['#0074ff', '#dc3545'],
+        'blue' => ['#bdbaff', '#ff6384'],
+        'green' => ['#28c76f', '#ff6384'],
+        'red' => ['#ff6384', '#457b9d'],
+        'dark' => ['#323232', '#969696'],
+    ];
     use TotalsTrait;
 
     public function data($request)
@@ -136,7 +142,12 @@ class DashboardData
         $sale_note_total_payment = $sale_note_total_payment_pen + $sale_note_total_payment_usd;
 
         $sale_note_total_to_pay = $sale_note_total - $sale_note_total_payment;
-
+        
+        $configuration = Configuration::find(1);
+        $visual = $configuration ? json_decode(json_encode($configuration->visual), true) : [];
+        
+        $theme = $visual['sidebar_theme'] ?? 'blue';
+        $graph_colors = self::$colors[$theme];
         return [
             'totals' => [
                 'total_payment' => number_format($sale_note_total_payment,2, ".", ""),
@@ -149,10 +160,8 @@ class DashboardData
                     [
                         'label' => 'Notas de venta',
                         'data' => [round($sale_note_total_payment,2), round($sale_note_total_to_pay,2)],
-                        'backgroundColor' => [
-                            'rgb(20, 120, 250)',
-                            'rgb(252, 78, 75)',
-                        ]
+                        'backgroundColor' => $graph_colors
+                        
                     ]
                 ],
             ]

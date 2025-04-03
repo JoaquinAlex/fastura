@@ -432,9 +432,9 @@ class ConfigurationController extends Controller
     private function getGraphColors($theme)
     {
         $colors = [
-            'white' => ['#c8c8c8', '#323232'],
+            'white' => ['#0074ff', '#dc3545'],
             'blue' => ['#bdbaff', '#ff6384'],
-            'green' => ['#2a9d8f', '#ff6384'],
+            'green' => ['#28c76f', '#ff6384'],
             'red' => ['#ff6384', '#457b9d'],
             'dark' => ['#323232', '#969696'],
         ];
