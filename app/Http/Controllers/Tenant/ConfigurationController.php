@@ -433,10 +433,10 @@ class ConfigurationController extends Controller
     {
         $colors = [
             'white' => ['#0074ff', '#dc3545'],
-            'blue' => ['#bdbaff', '#ff6384'],
-            'green' => ['#28c76f', '#ff6384'],
+            'blue' => ['#bdbaff', '#323232'],
+            'green' => ['#28c76f', '#969696'],
             'red' => ['#ff6384', '#457b9d'],
-            'dark' => ['#323232', '#969696'],
+            'dark' => ['#283046', '#969696'],
         ];
         
 
