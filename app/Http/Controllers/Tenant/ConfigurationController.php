@@ -416,7 +416,8 @@ class ConfigurationController extends Controller
             'header'   => $request->header,
             'sidebars' => $request->sidebars,
             'navbar' => $request->navbar,
-            'sidebar_theme' => $request->sidebar_theme
+            'sidebar_theme' => $request->sidebar_theme,
+            'graph_colors'  => $this->getGraphColors($request->sidebar_theme)
         ];
 
         $configuration = Configuration::find(1);
@@ -428,7 +429,19 @@ class ConfigurationController extends Controller
             'message' => 'Configuración actualizada'
         ];
     }
+    private function getGraphColors($theme)
+    {
+        $colors = [
+            'white' => ['#c8c8c8', '#323232'],
+            'blue' => ['#bdbaff', '#ff6384'],
+            'green' => ['#2a9d8f', '#ff6384'],
+            'red' => ['#ff6384', '#457b9d'],
+            'dark' => ['#323232', '#969696'],
+        ];
+        
 
+        return $colors[$theme] ?? $colors['blue'];
+    }
     public function getSystemPhone()
     {
         // $configuration = Configuration::first();
